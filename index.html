@@ -6,24 +6,34 @@
     <title>dangkhoabach | Minigames</title>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <style>
+        .swal2-popup .swal2-styled {
+            border: 0;
+            border-radius: .25em;
+            background: initial;
+            background-color: #7367f0;
+            color: #fff;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        .swal2-popup .swal2-styled:hover {
+            background-color: #675cd8;
+        }
+    </style>
 </head>
 <body>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             Swal.fire({
-                title: 'Chọn một trò chơi',
-                text: "Bạn muốn chơi game nào?",
+                title: 'Bạn muốn chơi game nào?',
                 icon: 'question',
-                showCancelButton: true,
-                confirmButtonText: 'Tetris',
-                cancelButtonText: 'Slitherio',
-                reverseButtons: true
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    window.location.href = "https://games.dangkhoabach.id.vn/tetris";
-                } else if (result.dismiss === Swal.DismissReason.cancel) {
-                    window.location.href = "https://games.dangkhoabach.id.vn/slitherio";
-                }
+                html: `
+                    <button class="swal2-styled" onclick="window.location.href='https://games.dangkhoabach.id.vn/tetris'">Tetris</button>
+                    <button class="swal2-styled" onclick="window.location.href='https://games.dangkhoabach.id.vn/slitherio'">Slitherio</button>
+                `,
+                showConfirmButton: false,
+                showCancelButton: false
             });
         });
     </script>
