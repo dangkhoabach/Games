@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dangkhoabach | Minigames</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            Swal.fire({
+                title: 'Chọn một trò chơi',
+                text: "Bạn muốn chơi game nào?",
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonText: 'Tetris',
+                cancelButtonText: 'Slitherio',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = "https://games.dangkhoabach.id.vn/tetris";
+                } else if (result.dismiss === Swal.DismissReason.cancel) {
+                    window.location.href = "https://games.dangkhoabach.id.vn/slitherio";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
